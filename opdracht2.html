@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <style>
+    </style>
+    
+    <script>
+     
+      function beginnen(){
+        var invoer = document.getElementById("tekst_invoer").value;
+
+        if (invoer.includes("e")){
+            alert("Dit woord bevat een 'e'.");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Opdracht 2</h2>
+    <p>Maak een tekst-invoerveld.<br>
+    Maak een knop.<br>
+    In dat invoerveld kan ik als gebruiker iets intypen.<br>
+    Dat eerste veld gebruik ik om een woord in te typen.<br>
+    <br>
+    Als ik op de knop klik, krijg ik een alert als er de letter e in zit.<br>
+    Zit er geen letter e in, dan gebeurd er niks.</p>
+
+    <input type="text" id="tekst_invoer">
+    <input type=button value="Bevat 'e' of niet ?" onclick="beginnen()">
+    
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <style>
+    </style>
+    
+    <script>
+        var afb_lijst = ["https://www.twincatering.nl/wp-content/uploads/2018/12/lente-scaled.jpg",
+        "https://www.vakantiedealz.nl/wp-content/uploads/2019/08/Turkije-Alanya-Cleopatra-strand-zee-1000x640.jpg",
+        "https://www.scientias.nl/wp-content/uploads/2019/09/autumn_forest_1569222828.jpg",
+        "https://www.pietsweer.nl/sites/default/files/styles/detail_1110_590/public/2020-01/snow-4668099_1280.jpg?itok=B5-outt0"];
+
+        var seizoen_lijst = ["lente","zomer","herfst","winter"];
+
+        // Counter voor berekenen jaren
+        var counter = 0;
+
+       function verander_afbeelding(){
+       var huidig_seizoen = 0;
+
+       for (var x = 0; x < seizoen_lijst.length; x++) {
+            if (seizoen_lijst[x] == document.getElementById("seizoenAfb1").alt) {
+                huidig_seizoen = x;
+            }
+        }
+
+        // Modulo zodat laatste plaatje in de lijst weer eerste plaatje wordt
+        document.getElementById("seizoenAfb1").src = afb_lijst[(huidig_seizoen + 1)%afb_lijst.length];
+        document.getElementById("seizoenAfb1").alt = seizoen_lijst[(huidig_seizoen + 1)%seizoen_lijst.length];
+        
+        if (document.getElementById("seizoenAfb1").alt == "lente") {
+            document.getElementById("seizoenAfb2").src = "https://media.s-bol.com/BLQZWBjyXOAQ/550x295.jpg";
+        }
+        else {
+            document.getElementById("seizoenAfb2").src = "https://s3.eu-central-1.amazonaws.com/onlinepets/images/Golden-Retriever.jpg";
+        }
+    
+    }
+        
+    </script>
+  </head>
+  <body>
+    <h2>Opdracht 8</h2>
+    <img id="seizoenAfb1" src="https://www.twincatering.nl/wp-content/uploads/2018/12/lente-scaled.jpg" 
+    alt="lente" style="width:400px" onclick="verander_afbeelding()">
+    <img id="seizoenAfb2" src="https://media.s-bol.com/BLQZWBjyXOAQ/550x295.jpg" style="width:400px"><br>
+    <br>
+  </body>
+</html>

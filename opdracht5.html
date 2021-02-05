@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <style>
+    </style>
+    
+    <script>
+        var counter_list = [0,0,0,0];
+        var letters = ["A","B","C","D"];
+
+       function u_heeft_gedrukt(gedrukte_knop){
+        // -1 zodat ik de juiste index heb
+        var index_letter = parseInt(gedrukte_knop, 10) - 1;
+
+        // Houdt het aantal keer bij van respectievelijk A,B,C en D
+        counter_list[index_letter] += 1;
+
+        for (var x = 0; x < letters.length; x++){
+            if (index_letter == x) {
+                if (counter_list[index_letter] > 1) {
+                    alert("U heeft al een keer op " + letters[x] + " geklikt. Nu voor de " + counter_list[x] + "de keer.");
+                }
+            }
+        }
+        
+        var uitkomst = document.getElementById("uitkomst");
+        uitkomst.innerHTML += "U heeft op knop " + letters[index_letter] + " geklikt.<br>"
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Opdracht 5</h2>
+    
+    <input id="1" type=button value="A" onclick="u_heeft_gedrukt(this.id)">
+    <input id="2" type=button value="B" onclick="u_heeft_gedrukt(this.id)">
+    <input id="3" type=button value="C" onclick="u_heeft_gedrukt(this.id)">
+    <input id="4" type=button value="D" onclick="u_heeft_gedrukt(this.id)"><br>
+    <br>
+    <div id="uitkomst">  </div>
+    
+  </body>
+</html>

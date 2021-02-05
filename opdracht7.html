@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <style>
+    </style>
+    
+    <script>
+        var afb_lijst = ["https://www.twincatering.nl/wp-content/uploads/2018/12/lente-scaled.jpg",
+        "https://www.vakantiedealz.nl/wp-content/uploads/2019/08/Turkije-Alanya-Cleopatra-strand-zee-1000x640.jpg",
+        "https://www.scientias.nl/wp-content/uploads/2019/09/autumn_forest_1569222828.jpg",
+        "https://www.pietsweer.nl/sites/default/files/styles/detail_1110_590/public/2020-01/snow-4668099_1280.jpg?itok=B5-outt0"];
+
+        var seizoen_lijst = ["lente","zomer","herfst","winter"];
+        var seizoen_afb_lijst = ["seizoenAfb1","seizoenAfb2"];
+
+        // Counter voor berekenen jaren
+        var counter = 0;
+
+       function verander_afbeelding(gedrukte_knop){
+        // -1 zodat ik de juiste index heb
+        var index_seizoen = parseInt(gedrukte_knop, 10) - 1;
+
+       var huidig_seizoen = 0;
+
+       for (var x = 0; x < seizoen_lijst.length; x++) {
+            if (seizoen_lijst[x] == document.getElementById(seizoen_afb_lijst[index_seizoen]).alt) {
+                huidig_seizoen = x;
+            }
+        }
+
+        // Modulo zodat laatste plaatje in de lijst weer eerste plaatje wordt
+        document.getElementById(seizoen_afb_lijst[index_seizoen]).src = afb_lijst[(huidig_seizoen + 1)%afb_lijst.length];
+        document.getElementById(seizoen_afb_lijst[index_seizoen]).alt = seizoen_lijst[(huidig_seizoen + 1)%seizoen_lijst.length];
+      }
+
+      function hetzelfde_of_niet(){
+        
+        if (document.getElementById("seizoenAfb1").alt == document.getElementById("seizoenAfb2").alt) {
+            console.log("HETZELFDE");
+        }
+        else {
+            console.log("NIET HETZELFDE");
+        }
+        
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Opdracht 7</h2>
+    <img id="seizoenAfb1" src="https://www.twincatering.nl/wp-content/uploads/2018/12/lente-scaled.jpg" 
+    alt="lente" style="width:400px">
+    <img id="seizoenAfb2" src="https://www.twincatering.nl/wp-content/uploads/2018/12/lente-scaled.jpg" 
+    alt="lente" style="width:400px"><br>
+    <br>
+    
+    <input id="1" type=button value="Volgend seizoen afbeelding 1" onclick="verander_afbeelding(this.id)">
+    <input id="2" type=button value="Volgend seizoen afbeelding 2" onclick="verander_afbeelding(this.id)"><br>
+    <br>
+    <input type=button value="Hetzelfde of niet ?!" onclick="hetzelfde_of_niet()"><br>
+    <br>
+    <div id="uitkomst">  </div>
+
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <style>
+    </style>
+    
+    <script>
+     
+       function u_heeft_gedrukt(gedrukte_knop){
+        var uitkomst = document.getElementById("uitkomst");
+        uitkomst.innerHTML += "U heeft op knop " + gedrukte_knop + " geklikt.<br>"
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Opdracht 4</h2>
+    
+    <input id="A" type=button value="A" onclick="u_heeft_gedrukt(this.id)">
+    <input id="B" type=button value="B" onclick="u_heeft_gedrukt(this.id)">
+    <input id="C" type=button value="C" onclick="u_heeft_gedrukt(this.id)">
+    <input id="D" type=button value="D" onclick="u_heeft_gedrukt(this.id)"><br>
+    <br>
+    <div id="uitkomst">  </div>
+    
+  </body>
+</html>

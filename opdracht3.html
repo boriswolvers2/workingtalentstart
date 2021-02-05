@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <style>
+    </style>
+    
+    <script>
+     
+      function hoevaak(){
+        var invoer = document.getElementById("tekst_invoer1").value;
+        var invoer2 = document.getElementById("tekst_invoer2").value;
+
+        var counter = 0;
+        var counter2 = 0;
+
+        for(var x = 0; x < invoer.length; x++){
+            if (invoer[x] == "e") {
+                counter += 1;
+            }
+            if (invoer[x] == invoer2) {
+                counter2 += 1;
+            }
+        }
+        if (counter > 0) {
+            alert("De letter 'e' zit " + counter + " keer in het woord " + invoer + ".");
+        }
+        if (counter2 > 0) {
+            alert("De gekozen letter " + invoer2 + " zit " + counter2 + " keer in het woord " + invoer + ".");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Opdracht 3</h2>
+    <p>Hoevaak zit de letter 'e' in het woord?</p>
+    
+    <input type="text" id="tekst_invoer1"><br>
+
+    <p>Hoevaak zit de gekozen letter in het woord?</p>
+    <input type="text" id="tekst_invoer2"><br>
+    <br>
+    <input type=button value="Hoeveel letters ?" onclick="hoevaak()"><br>
+    
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <style>
+    </style>
+    
+    <script>
+     
+      function beginnen(){
+        var invoer = document.getElementById("tekst_invoer").value;
+
+        if (invoer == "hallo"){
+            alert("Welkom");
+        }
+        if (invoer == "doei") {
+            alert("Tot de volgende keer");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Opdracht 1</h2>
+    <p>Maak een tekst-invoerveld.<br>
+    Maak een knop.<br>
+    In dat invoerveld kan ik als gebruiker iets intypen.<br>
+    Als ik hallo intyp en dan op de knop klik komt er een alert met Welkom<br>
+    Als ik doei intyp en dan op de knop klik komt er een alert met Tot de volgende keer.<br>
+    In andere gevallen gebeurd er niks.</p>
+
+    <input type="text" id="tekst_invoer">
+    <input type=button value="Klik hier" onclick="beginnen()">
+    
+  </body>
+</html>
